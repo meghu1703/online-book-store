@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Poetry Books - RAVJI BOOKSTORE</title>
+    <link rel="stylesheet" href="./css/bootstrap.css" />
+
+</head>
+<body class="bg-dark text-light">
+
+  <header class="bg-secondary bg-gradient text-light text-center p-4 mb-4 rounded-bottom">
+    <div class="container">
+      <h1 class="display-5 fw-semibold">Poetry Books</h1>
+      <p class="lead text-info">Words that sing & inspire</p>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="table-responsive">
+      <table class="table table-striped table-hover table-bordered align-middle bg-dark text-light">
+        <thead class="table-primary">
+          <tr>
+            <th>Sr No</th>
+            <th>Book Title</th>
+            <th>Author</th>
+            <th>Description</th>
+            <th>Price</th>
+            <th style="min-width:130px;">Details</th>
+            <th style="min-width:150px;">Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th>1</th>
+            <td><a href="poetry_1.html" class="text-info text-decoration-none">Gitanjali</a></td>
+            <td>Rabindranath Tagore</td>
+            <td>Devotional poems exploring spirituality, humanity, and nature.</td>
+            <td class="fw-semibold text-success">₹300</td>
+            <td><a href="poetry_1.html" class="btn btn-info btn-sm w-100">View Details</a></td>
+            <td>
+              <button class="btn btn-primary btn-sm me-2 mb-2" onclick="addToCart('Gitanjali', 300)">Add to Cart</button>
+              <a href="login.html" class="btn btn-success btn-sm mb-2">Buy Now</a>
+            </td>
+          </tr>
+          <tr>
+            <th>2</th>
+            <td><a href="poetry_2.html" class="text-info text-decoration-none">Kabir Ke Dohe</a></td>
+            <td>Kabir Das</td>
+            <td>Verses promoting spiritual awakening and unity beyond religion.</td>
+            <td class="fw-semibold text-success">₹200</td>
+            <td><a href="poetry_2.html" class="btn btn-info btn-sm w-100">View Details</a></td>
+            <td>
+              <button class="btn btn-primary btn-sm me-2 mb-2" onclick="addToCart('Kabir Ke Dohe', 200)">Add to Cart</button>
+              <a href="login.html" class="btn btn-success btn-sm mb-2">Buy Now</a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </main>
+
+  <script src="./js/bootstrap.js"></script>
+</body>
+</html>

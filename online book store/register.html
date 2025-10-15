@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Register - Pooja's Bookstore</title>
+  <link rel="stylesheet" href="./css/bootstrap.css" />
+  <style>
+    body {
+      background-color: #f0f2f5;
+      font-family: Arial, sans-serif;
+    }
+
+    .register-container {
+      max-width: 500px;
+      margin: 80px auto;
+      background-color: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .register-container h2 {
+      text-align: center;
+      margin-bottom: 25px;
+      color: #113F67;
+    }
+
+    .form-control {
+      margin-bottom: 20px;
+    }
+
+    .btn-register {
+      background-color: #113F67;
+      color: white;
+      width: 100%;
+    }
+
+    .btn-register:hover {
+      background-color: #0d2f4b;
+    }
+
+    .login-link {
+      text-align: center;
+      margin-top: 15px;
+    }
+
+    .login-link a {
+      color: #113F67;
+      text-decoration: none;
+    }
+
+    .login-link a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="register-container">
+    <h2>Create Account</h2>
+    <form onsubmit="return handleRegister(event)">
+      <div class="form-group">
+        <label for="fullname">Full Name</label>
+        <input type="text" class="form-control" id="fullname" placeholder="Enter your full name" required />
+      </div>
+      <div class="form-group">
+        <label for="email">Email address</label>
+        <input type="email" class="form-control" id="email" placeholder="Enter your email" required />
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" class="form-control" id="password" placeholder="Create password" required />
+      </div>
+      <div class="form-group">
+        <label for="confirm">Confirm Password</label>
+        <input type="password" class="form-control" id="confirm" placeholder="Confirm password" required />
+      </div>
+      <button type="submit" class="btn btn-register">Register</button>
+    </form>
+
+    <div class="login-link">
+      Already have an account? <a href="login.html">Login here</a>
+    </div>
+  </div>
+
+  <script>
+    function handleRegister(event) {
+      event.preventDefault();
+
+      const fullname = document.getElementById("fullname").value.trim();
+      const email = document.getElementById("email").value.trim().toLowerCase();
+      const password = document.getElementById("password").value;
+      const confirm = document.getElementById("confirm").value;
+
+      if (!fullname || !email || !password || !confirm) {
+        alert("Please fill all fields.");
+        return false;
+      }
+
+      if (password !== confirm) {
+        alert("Passwords do not match.");
+        return false;
+      }
+
+      // Load existing users from localStorage
+      let users = JSON.parse(localStorage.getItem("users")) || [];
+
+      // Check if user already exists
+      if (users.some(user => user.email === email)) {
+        alert("An account with this email already exists.");
+        return false;
+      }
+
+      // Save new user
+      users.push({ fullname, email, password });
+      localStorage.setItem("users", JSON.stringify(users));
+
+      alert("Registration successful! You can now login.");
+      window.location.href = "login.html"; // Redirect to login
+
+      return false;
+    }
+  </script>
+
+  <script src="./js/bootstrap.js"></script>
+</body>
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Login - Pooja's Bookstore</title>
+  <link rel="stylesheet" href="./css/bootstrap.css" />
+  <style>
+    body {
+      background-color: #f0f2f5;
+      font-family: Arial, sans-serif;
+    }
+
+    .login-container {
+      max-width: 400px;
+      margin: 100px auto;
+      background-color: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .login-container h2 {
+      text-align: center;
+      margin-bottom: 25px;
+      color: #113F67;
+    }
+
+    .form-control {
+      margin-bottom: 20px;
+    }
+
+    .btn-login {
+      background-color: #113F67;
+      color: white;
+      width: 100%;
+    }
+
+    .btn-login:hover {
+      background-color: #0d2f4b;
+    }
+
+    .extra-links {
+      text-align: center;
+      margin-top: 15px;
+    }
+
+    .extra-links a {
+      color: #113F67;
+      text-decoration: none;
+      margin: 0 10px;
+    }
+
+    .extra-links a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="login-container">
+    <h2>Login</h2>
+    <form onsubmit="return handleLogin(event)">
+      <div class="form-group">
+        <label for="username">Email or Username</label>
+        <input type="text" class="form-control" id="username" placeholder="Enter email or username" required />
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" class="form-control" id="password" placeholder="Enter password" required />
+      </div>
+      <button type="submit" class="btn btn-login">Login</button>
+    </form>
+
+    <div class="extra-links">
+      <a href="./register.html">Register</a> |
+      <a href="#">Forgot Password?</a>
+    </div>
+  </div>
+
+  <script>
+    function handleLogin(event) {
+      event.preventDefault(); // Prevent page refresh
+
+      const username = document.getElementById("username").value.trim();
+      const password = document.getElementById("password").value;
+
+      // Simulated login logic (replace with real validation or API)
+      if (username === "admin" && password === "admin123") {
+        alert("Login successful!");
+        // Redirect to homepage or dashboard
+        window.location.href = "horror.html"; // Change to your homepage
+      } else {
+        alert("Invalid username or password!");
+      }
+
+      return false;
+    }
+  </script>
+
+  <script src="./js/bootstrap.js"></script>
+</body>
+</html>

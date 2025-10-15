@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>RAVJI BOOKSTORE</title>
+  <link rel="stylesheet" href="./css/bootstrap.css" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+  <style>
+    body {
+      background: #181d2a;
+      color: #f5f6fa;
+      font-family: 'Segoe UI', Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .hero-simple {
+      background: #232946;
+      color: #61f6df;
+      padding: 50px 15px 30px 15px;
+      text-align: center;
+    }
+    .hero-simple h1 {
+      margin-bottom: 10px;
+      font-size: 2rem;
+      font-weight: 700;
+    }
+    .hero-simple p {
+      color: #e6f6fd;
+      font-size: 1.02rem;
+      opacity: 0.87;
+    }
+
+    .section-title-slim {
+      text-align: center;
+      color: #61f6df;
+      font-size: 1.18rem;
+      margin-top: 38px;
+      margin-bottom: 15px;
+      font-weight: 600;
+    }
+
+    .category-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      justify-content: center;
+      margin-bottom: 24px;
+    }
+    .category-simple {
+      background: #232946;
+      border-radius: 7px;
+      padding: 16px 10px;
+      min-width: 128px;
+      text-align: center;
+      margin: 0 3px;
+    }
+    .category-simple i {
+      font-size: 1.4rem;
+      color: #61f6df;
+    }
+    .category-simple a {
+      display: block;
+      color: #f5f6fa;
+      text-decoration: none;
+      margin-top: 3px;
+      font-weight: 500;
+    }
+    .category-simple span {
+      color: #c0ccd6;
+      font-size: 0.92rem;
+      margin-top: 1px;
+      display: block;
+    }
+
+    .books-slimrow {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+    .book-simplecard {
+      background: #232946;
+      border-radius: 7px;
+      padding: 14px 10px;
+      min-width: 200px;
+      max-width: 310px;
+      margin: 0 2px 10px 2px;
+    }
+    .book-simplecard h5 {
+      color: #61f6df;
+      font-size: 1rem;
+      margin-bottom: 5px;
+      font-weight: 600;
+    }
+    .book-simplecard p {
+      color: #f5f6fa;
+      font-size: 0.93rem;
+      opacity: 0.87;
+      margin: 0;
+    }
+
+    @media (max-width: 700px) {
+      .category-row, .books-slimrow { flex-direction: column; align-items: center;}
+      .hero-simple { padding: 32px 6px 18px 6px;}
+    }
+  </style>
+</head>
+<body>
+  <div class="hero-simple">
+    <h1>📚 RAVJI BOOKSTORE</h1>
+    <p>Your one-stop shop for timeless reads and modern classics</p>
+  </div>
+
+  <main class="container mt-4">
+    <div class="section-title-slim">Browse Categories</div>
+    <div class="category-row">
+      <div class="category-simple">
+        <i class="fas fa-ghost"></i>
+        <a href="horror.html">Horror</a>
+        <span>Chills & thrills</span>
+      </div>
+      <div class="category-simple">
+        <i class="fas fa-hands-praying"></i>
+        <a href="spiritual.html">Spiritual</a>
+        <span>Wisdom & peace</span>
+      </div>
+      <div class="category-simple">
+        <i class="fas fa-feather-alt"></i>
+        <a href="poetry.html">Poetry</a>
+        <span>Words to inspire</span>
+      </div>
+      <div class="category-simple">
+        <i class="fas fa-masks-theater"></i>
+        <a href="drama.html">Drama</a>
+        <span>Stories & conflict</span>
+      </div>
+    </div>
+
+    <div class="section-title-slim">New Arrivals</div>
+    <div class="books-slimrow">
+      <div class="book-simplecard">
+        <h5>1984 - George Orwell</h5>
+        <p>"It was a bright cold day in April and the clocks were striking thirteen."</p>
+      </div>
+      <div class="book-simplecard">
+        <h5>Brave New World - Aldous Huxley</h5>
+        <p>"A squat gray building of only thirty-four stories."</p>
+      </div>
+      <div class="book-simplecard">
+        <h5>The Picture of Dorian Gray - Oscar Wilde</h5>
+        <p>"Dorian believed beauty and pleasure were the only pursuits worth living for."</p>
+      </div>
+    </div>
+
+    <div class="section-title-slim">Best Sellers</div>
+    <div class="books-slimrow">
+      <div class="book-simplecard">
+        <h5>Alice in Wonderland - Lewis Carroll</h5>
+        <p>"Alice was beginning to get very tired of sitting by her sister on the bank."</p>
+      </div>
+      <div class="book-simplecard">
+        <h5>The Picture of Dorian Gray - Oscar Wilde</h5>
+        <p>"The only things worth pursuing in life are beauty and fulfilment of the senses."</p>
+      </div>
+    </div>
+  </main>
+  <script src="./js/bootstrap.js"></script>
+</body>
+</html>

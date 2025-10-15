@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Horror Books - RAVJI BOOKSTORE</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
+</head>
+<body class="bg-dark text-light">
+
+  <header class="bg-secondary bg-gradient text-center p-4 rounded-bottom mb-4">
+    <div class="container">
+      <h1 class="display-5 fw-semibold">Horror Books</h1>
+      <p class="lead text-info">Explore our chilling collection</p>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="table-responsive">
+      <table class="table table-striped table-hover table-bordered align-middle bg-dark text-light">
+        <thead class="table-primary">
+          <tr>
+            <th>Sr No</th>
+            <th>Book Title</th>
+            <th>Author</th>
+            <th>Description</th>
+            <th>Price</th>
+            <th style="min-width:130px;">Details</th>
+            <th style="min-width:150px;">Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th>1</th>
+            <td><a href="horror_1.html" class="text-info text-decoration-none">The Shining</a></td>
+            <td>Stephen King</td>
+            <td>A haunted hotel isolates a family, leading to terrifying events.</td>
+            <td class="fw-semibold text-success">₹399</td>
+            <td><a href="horror_1.html" class="btn btn-info btn-sm w-100">View Details</a></td>
+            <td>
+              <button class="btn btn-primary btn-sm me-2 mb-2" onclick="addToCart('The Shining', 399)">Add to Cart</button>
+              <a href="login.html" class="btn btn-success btn-sm mb-2">Buy Now</a>
+            </td>
+          </tr>
+          <tr>
+            <th>2</th>
+            <td><a href="horror_2.html" class="text-info text-decoration-none">It</a></td>
+            <td>Stephen King</td>
+            <td>A shape-shifting evil terrorizes children in a small town.</td>
+            <td class="fw-semibold text-success">₹450</td>
+            <td><a href="horror_2.html" class="btn btn-info btn-sm w-100">View Details</a></td>
+            <td>
+              <button class="btn btn-primary btn-sm me-2 mb-2" onclick="addToCart('It', 450)">Add to Cart</button>
+              <a href="login.html" class="btn btn-success btn-sm mb-2">Buy Now</a>
+            </td>
+          </tr>
+          <tr>
+            <th>3</th>
+            <td><a href="horror_3.html" class="text-info text-decoration-none">Dracula</a></td>
+            <td>Bram Stoker</td>
+            <td>The original vampire classic filled with suspense and horror.</td>
+            <td class="fw-semibold text-success">₹299</td>
+            <td><a href="horror_3.html" class="btn btn-info btn-sm w-100">View Details</a></td>
+            <td>
+              <button class="btn btn-primary btn-sm me-2 mb-2" onclick="addToCart('Dracula', 299)">Add to Cart</button>
+              <a href="login.html" class="btn btn-success btn-sm mb-2">Buy Now</a>
+            </td>
+          </tr>
+          <tr>
+            <th>4</th>
+            <td><a href="horror_4.html" class="text-info text-decoration-none">The Haunting of Hill House</a></td>
+            <td>Shirley Jackson</td>
+            <td>A chilling tale of a haunted mansion and psychological fear.</td>
+            <td class="fw-semibold text-success">₹375</td>
+            <td><a href="horror_4.html" class="btn btn-info btn-sm w-100">View Details</a></td>
+            <td>
+              <button class="btn btn-primary btn-sm me-2 mb-2" onclick="addToCart('The Haunting of Hill House', 375)">Add to Cart</button>
+              <a href="login.html" class="btn btn-success btn-sm mb-2">Buy Now</a>
+            </td>
+          </tr>
+          <tr>
+            <th>5</th>
+            <td><a href="horror_5.html" class="text-info text-decoration-none">Lucifer</a></td>
+            <td>Chris Rafferty</td>
+            <td>Lucifer, a fallen angel who rebelled against God, leads the devils.</td>
+            <td class="fw-semibold text-success">₹320</td>
+            <td><a href="horror_5.html" class="btn btn-info btn-sm w-100">View Details</a></td>
+            <td>
+              <button class="btn btn-primary btn-sm me-2 mb-2" onclick="addToCart('Lucifer', 320)">Add to Cart</button>
+              <a href="login.html" class="btn btn-success btn-sm mb-2">Buy Now</a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

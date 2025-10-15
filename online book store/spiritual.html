@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Spiritual Books - RAVJI BOOKSTORE</title>
+    <link rel="stylesheet" href="./css/bootstrap.css" />
+
+</head>
+<body class="bg-dark text-light">
+
+  <header class="bg-secondary bg-gradient text-light text-center p-4 mb-4 rounded-bottom">
+    <div class="container">
+      <h1 class="display-5 fw-semibold">Spiritual Books</h1>
+      <p class="lead text-info">Discover timeless wisdom</p>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="table-responsive">
+      <table class="table table-striped table-hover table-bordered align-middle bg-dark text-light">
+        <thead class="table-primary">
+          <tr>
+            <th>Sr No</th>
+            <th>Book Title</th>
+            <th>Author</th>
+            <th>Description</th>
+            <th>Price</th>
+            <th style="min-width:130px;">Details</th>
+            <th style="min-width:150px;">Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th>1</th>
+            <td><a href="spiritual_1.html" class="text-info text-decoration-none">Shreemad Bhagvad Gita</a></td>
+            <td>Veda Vyasa</td>
+            <td>The sermon of Lord Krishna to Arjun before the Mahabharata war.</td>
+            <td class="fw-semibold text-success">₹350</td>
+            <td><a href="spiritual_1.html" class="btn btn-info btn-sm w-100">View Details</a></td>
+            <td>
+              <button class="btn btn-primary btn-sm me-2 mb-2" onclick="addToCart('Shreemad Bhagvad Gita', 350)">Add to Cart</button>
+              <a href="login.html" class="btn btn-success btn-sm mb-2">Buy Now</a>
+            </td>
+          </tr>
+          <tr>
+            <th>2</th>
+            <td><a href="spiritual_2.html" class="text-info text-decoration-none">Ramcharitmanas</a></td>
+            <td>Tulsidas</td>
+            <td>An epic poem depicting the life of Lord Rama.</td>
+            <td class="fw-semibold text-success">₹300</td>
+            <td><a href="spiritual_2.html" class="btn btn-info btn-sm w-100">View Details</a></td>
+            <td>
+              <button class="btn btn-primary btn-sm me-2 mb-2" onclick="addToCart('Ramcharitmanas', 300)">Add to Cart</button>
+              <a href="login.html" class="btn btn-success btn-sm mb-2">Buy Now</a>
+            </td>
+          </tr>
+          <tr>
+            <th>3</th>
+            <td><a href="spiritual_3.html" class="text-info text-decoration-none">Garuda Purana</a></td>
+            <td>Veda Vyasa</td>
+            <td>One of the sacred Mahapuranas revered by devotees.</td>
+            <td class="fw-semibold text-success">₹400</td>
+            <td><a href="spiritual_3.html" class="btn btn-info btn-sm w-100">View Details</a></td>
+            <td>
+              <button class="btn btn-primary btn-sm me-2 mb-2" onclick="addToCart('Garuda Purana', 400)">Add to Cart</button>
+              <a href="login.html" class="btn btn-success btn-sm mb-2">Buy Now</a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </main>
+
+  <script src="./js/bootstrap.js"></script>
+</body>
+</html>

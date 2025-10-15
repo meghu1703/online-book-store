@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Online Bookstore</title>
+  <link rel="stylesheet" href="./css/bootstrap.css" />
+  <style>
+    body {
+      background-color: #f8f9fa;
+    }
+
+    .store-header {
+      background-color: #113F67;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .category-card {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .category-card img {
+      width: 100%;
+      max-height: 150px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+
+    .category-btn {
+      margin-top: 10px;
+      display: inline-block;
+      background-color: #34699A;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .category-btn:hover {
+      background-color: #58A0C8;
+      color: black;
+    }
+
+    .section-link {
+      display: block;
+      text-align: center;
+      margin: 20px auto;
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: #113F67;
+      text-decoration: none;
+    }
+
+    .section-link:hover {
+      color: #58A0C8;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Store Name -->
+  <div class="store-header">
+    <h1>Pooja's Bookstore</h1>
+  </div>
+
+  <!-- Category Buttons with Images -->
+  <div class="container mt-4">
+    <div class="row">
+      <div class="col-md-3 category-card">
+        <img src="./images/horror.jpg" alt="Horror Books">
+        <a href="horror.html" class="category-btn">Horror</a>
+      </div>
+      <div class="col-md-3 category-card">
+        <img src="./images/mystery.jpg" alt="Mystery Books">
+        <a href="mystery.html" class="category-btn">Mystery</a>
+      </div>
+      <div class="col-md-3 category-card">
+        <img src="./images/poetry.jpg" alt="Poetry Books">
+        <a href="poetry.html" class="category-btn">Poetry</a>
+      </div>
+      <div class="col-md-3 category-card">
+        <img src="./images/drama.jpg" alt="Drama Books">
+        <a href="drama.html" class="category-btn">Drama</a>
+      </div>
+    </div>
+
+    <!-- New Arrivals & Best Sellers Links -->
+    <a href="new-arrivals.html" class="section-link">📚 View New Arrivals</a>
+    <a href="best-sellers.html" class="section-link">🔥 View Best Sellers</a>
+  </div>
+
+  <script src="./js/bootstrap.js"></script>
+</body>
+</html>

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Online Book Store</title>
+    <link rel="stylesheet" href="./css/bootstrap.css" />
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+
+        .store-header {
+            background-color: #113F67;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .bg-col1 {
+            background-color: #113F67;
+            color: white; 
+        }
+
+        .bg-col3 {
+            background-color: #34699A;
+            color: white; 
+        }
+
+        .category-btn {
+            display: flex;
+            align-items: center;                                                                                              
+            justify-content: center;
+            width: 100%;
+            height: 60px;
+            color: white;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 5px;
+            /* transition: background-color 0.3s, transform 0.2s; */
+        }
+
+        .category-btn:hover {
+            background-color: #58A0C8;
+            color: black;
+            /* transform: scale(1.05); */
+        }
+
+        .square-box {
+            border: 1px solid #000; /* black border */
+            padding: 20px;
+            height: 100%; /* ensures the box grows evenly */
+            box-sizing: border-box;
+        }
+
+        /* Add margin bottom between stacked items */
+        .mb-2 {
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="store-header text-center">
+        <h1>Pooja's Bookstore</h1>
+    </div>
+
+    <div class="container-fluid">
+
+        <div class="row text-white text-center">
+            <div class="col-3 mt-2">
+                <a href="horror.html" class="category-btn bg-col1">Horror</a>
+            </div>
+            <div class="col-3 mt-2">
+                <a href="mistrey.html" class="category-btn bg-col1">Mistrey</a>
+            </div>
+            <div class="col-3 mt-2">
+                <a href="poetry.html" class="category-btn bg-col1">Poetry</a>
+            </div>
+            <div class="col-3 mt-2">
+                <a href="drama.html" class="category-btn bg-col1">Drama</a>
+            </div>
+        </div>
+
+        <div class="row text-center mt-2">
+            <div class="col-3">
+                <div class="square-box">
+                    <p class="small">A great introduction to programming basics.</p>
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="square-box">
+                    <p class="small">Learn web development with hands-on examples.</p>
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="square-box">
+                    <p class="small">Explore advanced algorithms and data structures.</p>
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="square-box">
+                    <p class="small">A guide to mastering frontend frameworks.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- New Arrivals section -->
+        <div class="row text-white text-center mt-4">
+            <div class="col-12 bg-col1 text-white">
+                <h5>New Arrivals</h5>
+            </div>
+        </div>
+
+        <div class="row text-white text-center mt-2">
+            <div class="col-12  text-black mb-2">
+                <h5 class="text-darkblue">1984 - George Orwell</h5>
+                <p>"It was a bright cold day in April and the clocks were striking thirteen"</p>
+            </div>
+            <div class="col-12  text-black mb-2">
+                <h5 class="text-darkblue">Brave New World - Aldous Huxley</h5>
+                <p>"A squat gray building of only thirty-four stories"</p>
+            </div>
+            <div class="col-12  text-black mb-2">
+                <h5 class="text-darkblue">The Picture of Dorian Gray - Oscar Wilde</h5>
+                <p>"You see, young Dorian was convinced by his friend Lord Henry that the only things worth pursuing in life are beauty and fulfilment of the senses"</p>
+            </div>
+        </div>
+
+        <!-- Best Sellers section -->
+        <div class="row text-white text-center mt-4">
+            <div class="col-12 bg-col1 text-white">
+                <h5>Best Sellers</h5>
+            </div>
+        </div>
+
+        <div class="row text-white text-center mt-2 mb-5">
+            <div class="col-12  text-black mb-2">
+                <h5 class="text-darkblue">Alice in Wonderland - Lewis Carroll</h5>
+                <p>“Alice was beginning to get very tired of sitting by her sister on the bank, and of having nothing to do”</p>
+            </div>
+            <div class="col-12  text-black mb-2">
+                <h5 class="text-darkblue">The Picture of Dorian Gray - Oscar Wilde</h5>
+                <p>“You see, young Dorian was convinced by his friend Lord Henry that the only things worth pursuing in life are beauty and fulfilment of the senses.”</p>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="./js/bootstrap.js"></script>
+</body>
+</html>

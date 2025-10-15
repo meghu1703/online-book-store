@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Lucifer - Pooja's Bookstore</title>
+  <link rel="stylesheet" href="./css/bootstrap.css" />
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      background-color: #f8f9fa;
+      font-family: Arial, sans-serif;
+    }
+
+    .store-header {
+      background-color: #113F67;
+      color: white;
+      padding: 20px 0;
+      text-align: center;
+    }
+
+    .main-content {
+      min-height: calc(100vh - 80px);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 40px 20px;
+    }
+
+    .card {
+      width: 100%;
+      max-width: 1000px;
+      border: 1px solid #dee2e6;
+      border-radius: 6px;
+      overflow: hidden;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+    }
+
+    .card-img-top {
+      width: 100%;
+      height: 400px;
+      background-color: #eee;
+      object-fit: cover;
+    }
+
+    .card-body {
+      padding: 20px;
+    }
+
+    .card-title {
+      font-weight: 600;
+    }
+
+    .card-subtitle {
+      font-size: 0.95rem;
+      color: #6c757d;
+      margin-bottom: 10px;
+    }
+
+    .card-price {
+      font-weight: bold;
+      color: #28a745;
+      margin: 10px 0;
+    }
+
+    .card-text {
+      font-size: 0.95rem;
+      color: #555;
+      white-space: pre-line;
+    }
+
+    .btn-group {
+      display: flex;
+      gap: 10px;
+      margin-top: 15px;
+    }
+
+    .btn-group .btn {
+      flex: 1;
+    }
+
+    /* Cart icon styles */
+    .cart-icon {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      font-size: 28px;
+      cursor: pointer;
+      z-index: 1000;
+      user-select: none;
+    }
+
+    .cart-badge {
+      position: absolute;
+      top: -8px;
+      right: -10px;
+      font-size: 14px;
+      background: red;
+      color: white;
+      padding: 3px 7px;
+      border-radius: 50%;
+      font-weight: bold;
+    }
+
+    /* Cart modal styles */
+    .cart-modal {
+      position: fixed;
+      top: 70px;
+      right: 20px;
+      width: 320px;
+      max-height: 400px;
+      overflow-y: auto;
+      background: white;
+      border: 1px solid #ccc;
+      box-shadow: 0 0 15px rgba(0,0,0,0.2);
+      padding: 15px;
+      display: none;
+      z-index: 9999;
+      border-radius: 6px;
+    }
+
+    .cart-modal h4 {
+      margin-top: 0;
+      border-bottom: 1px solid #ddd;
+      padding-bottom: 10px;
+    }
+
+    .cart-item {
+      border-bottom: 1px solid #eee;
+      padding: 10px 0;
+    }
+
+    .cart-empty {
+      color: #777;
+      font-style: italic;
+      text-align: center;
+      padding: 20px 0;
+    }
+
+    @media (max-width: 768px) {
+      .card-img-top {
+        height: 300px;
+      }
+      .main-content {
+        padding: 20px;
+      }
+      .cart-modal {
+        width: 90%;
+        right: 5%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="store-header">
+    <h1>Lucifer</h1>
+  </div>
+
+  <!-- Cart Icon -->
+  <div class="cart-icon" onclick="toggleCart()">
+    🛒
+    <span class="cart-badge" id="cart-count">0</span>
+  </div>
+
+  <!-- Cart Modal -->
+  <div class="cart-modal" id="cart-modal">
+    <h4>Your Cart</h4>
+    <div id="cart-items"></div>
+  </div>
+
+  <div class="main-content">
+    <div class="card">
+      <img src="image5.jpg" class="card-img-top" alt="Lucifer Book Cover" />
+      <div class="card-body">
+        <h5 class="card-title">Lucifer</h5>
+        <h6 class="card-subtitle">Chris Rafferty</h6>
+        <p class="card-text">
+          Lucifer, in Christian tradition, is a name traditionally given to
+          the leader of the devils, a fallen angel who rebelled against God.
+        </p>
+        <p class="card-price">₹399</p>
+        <div class="btn-group">
+          <button class="btn btn-primary" onclick="addToCart('Lucifer', 399)">Add to Cart</button>
+        <!--<a href="#" class="btn btn-primary">Buy Now</a>-->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const cartCountElem = document.getElementById('cart-count');
+    const cartItemsElem = document.getElementById('cart-items');
+    const cartModal = document.getElementById('cart-modal');
+
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+    function saveCart() {
+      localStorage.setItem('cart', JSON.stringify(cart));
+    }
+
+    function updateCartCount() {
+      const total = cart.reduce((sum, item) => sum + item.quantity, 0);
+      cartCountElem.textContent = total;
+    }
+
+    function renderCart() {
+      cartItemsElem.innerHTML = '';
+      if (cart.length === 0) {
+        cartItemsElem.innerHTML = '<p class="cart-empty">Your cart is empty.</p>';
+        return;
+      }
+      cart.forEach(item => {
+        const div = document.createElement('div');
+        div.className = 'cart-item';
+        div.innerHTML = `
+          <strong>${item.title}</strong><br>
+          ₹${item.price} × ${item.quantity} = ₹${item.price * item.quantity}
+        `;
+        cartItemsElem.appendChild(div);
+      });
+    }
+
+    function addToCart(title, price) {
+      const existingItem = cart.find(item => item.title === title);
+      if (existingItem) {
+        existingItem.quantity += 1;
+      } else {
+        cart.push({ title, price, quantity: 1 });
+      }
+      saveCart();
+      updateCartCount();
+      renderCart();
+      if (cartModal.style.display !== 'block') {
+        cartModal.style.display = 'block';
+      }
+    }
+
+    function toggleCart() {
+      if (cartModal.style.display === 'block') {
+        cartModal.style.display = 'none';
+      } else {
+        renderCart();
+        cartModal.style.display = 'block';
+      }
+    }
+
+    updateCartCount();
+  </script>
+
+  <script src="./js/bootstrap.js"></script>
+</body>
+</html>
